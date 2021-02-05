@@ -41,7 +41,9 @@ client.on('message', message => {
     else if (command == 'remove') {
         client.commands.get('remove').execute(message, args, client, fs);
     }
-    
+    else if (command == 'line') {
+        client.commands.get('line').execute(message, args, client, fs, Discord);
+    }    
 
 
 });
