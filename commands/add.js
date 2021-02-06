@@ -3,15 +3,43 @@ module.exports = {
     description: "this is a ping command!",
     execute(message, args, client, fs) {
 
+        message.reply('Input Description').then(() => {
+            message.channel.awaitMessages(m => m.author.id == message.author.id,
+                { max: 1, time: 30000 }).then(collected => {
+                    mes = collected.first().content
+                    if (collected.first().content.toLowerCase()) {
 
-        client.reqs[args[0]] = {
-            description: args[1],
-            date: args[2]
-        }
-        fs.writeFile("./Database/reqs.json", JSON.stringify(client.reqs, null, 2), err => {
-            if (err) throw err;
+
+                        message.reply('Input Date MM/DD/YY').then(() => {
+                            message.channel.awaitMessages(m => m.author.id == message.author.id,
+                                { max: 1, time: 30000 }).then(collected => {
+                                    date = collected.first().content
+                                    if (collected.first().content.toLowerCase()) {
+
+                                        client.reqs[args[0]] = {
+                                            description: mes,
+                                            date: date
+                                        }
+                                        fs.writeFile("./Database/reqs.json", JSON.stringify(client.reqs, null, 4), err => {
+                                            if (err) throw err;
+                                        })
+                                        message.reply('Logged');
+                                    }
+
+                                    else
+                                        message.reply('Operation canceled.');
+                                }).catch(() => {
+                                    //
+                                });
+                        })
+                    }
+
+                    else
+                        message.reply('Operation canceled.');
+                }).catch(() => {
+                    //
+                });
         })
-        message.reply('Logged');
 
     }
 }
