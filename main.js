@@ -3,6 +3,8 @@ var client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] }
 const prefix = '2@ ';
 const fs = require('fs');
 
+const memberCounter = require('./counters/counterM');
+const serverTime = require('./counters/time');
 // const Timer = new Map()
 // client.reqs = require("./Database/reqs.json");
 
@@ -16,6 +18,8 @@ for (const file of commandFiles) {
 
 client.once('ready', ()=> {
     console.log("Ready")   
+    memberCounter(client);
+    serverTime(client);
 });
 client.on('guildMemberAdd', member => {
     let wcRole = member.guild.roles.cache.find(role => role.name === 'Member');
@@ -24,15 +28,18 @@ client.on('guildMemberAdd', member => {
     let embed = new Discord.MessageEmbed()
         .setColor('#e42643')
         .setDescription(`**Welcome** <@${member.user.id}>`)
-        .setFooter(`Visit  for Roles`)
-        .setFooter(`Visit <#814420531599638529> for Roles`)
+        .addFields(
+            { name: 'Get Roles Here', value: '<#814420531599638529>' }
+        )
         .setImage('https://media.tenor.com/images/5b6e236260445894227e4bba729048e0/tenor.gif')
 
 
     member.guild.channels.cache.get('813679705638305813').send(embed)
+    client.commands.get('react').execute(member, Discord, client);
 
     
 })
+
 
 client.on('message', message => {
 
@@ -59,9 +66,7 @@ client.on('message', message => {
     else if (command === 'unmute') {
         client.commands.get('unmute').execute(message, args);
     }
-    else if (command === 'react') {
-        client.commands.get('react').execute(message, args, Discord, client);
-    }
+    
     
 
     // else if (command == 'add') {
