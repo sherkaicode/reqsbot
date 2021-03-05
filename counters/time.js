@@ -7,7 +7,7 @@ module.exports = async (client) => {
         var minutes = date.getMinutes();
         
         channel.setName(`Server Time:${hours}:${minutes}`)
-        console.log(hours)
-        console.log(minutes)
+        // console.log(hours)
+        // console.log(minutes)
     }, 5000);
 }

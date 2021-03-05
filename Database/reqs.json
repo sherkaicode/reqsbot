@@ -1,18 +1,38 @@
 {
-  "filipino": {
-    "description": "assesment",
-    "date": "feb1mon"
-  },
-  "filipino1": {
-    "description": "formativeassesment",
-    "date": "feb8mon"
-  },
-  "dmt": {
-    "description": "new&emerging",
-    "date": "tbd"
-  },
-  "math": {
-    "description": "swaggger",
-    "date": "11/11/12"
-  }
+    "filipino": {
+        "description": "assesment",
+        "date": "feb1mon"
+    },
+    "filipino1": {
+        "description": "formativeassesment",
+        "date": "feb8mon"
+    },
+    "dmt": {
+        "description": "new&emerging",
+        "date": "tbd"
+    },
+    "math": {
+        "description": "LG 5.1.3",
+        "date": "02/10/21"
+    },
+    "physics": {
+        "description": "SW 2",
+        "date": "02/10/21"
+    },
+    "math1": {
+        "description": "LG 5.4.3",
+        "date": "02/17/21"
+    },
+    "research": {
+        "description": "Survey Forms",
+        "date": "02/10/21"
+    },
+    "math2": {
+        "description": "LG 3.6.3",
+        "date": "02/24/21"
+    },
+    "math3": {
+        "description": "asdasd",
+        "date": "11/11/11"
+    }
 }

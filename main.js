@@ -5,6 +5,7 @@ const fs = require('fs');
 
 const memberCounter = require('./counters/counterM');
 const serverTime = require('./counters/time');
+// const sched = require('./counters/sendSched');
 // const Timer = new Map()
 // client.reqs = require("./Database/reqs.json");
 
@@ -20,6 +21,7 @@ client.once('ready', ()=> {
     console.log("Ready")   
     memberCounter(client);
     serverTime(client);
+    // sched(client, Discord);
 });
 client.on('guildMemberAdd', member => {
     let wcRole = member.guild.roles.cache.find(role => role.name === 'Member');
@@ -65,6 +67,12 @@ client.on('message', message => {
     }
     else if (command === 'unmute') {
         client.commands.get('unmute').execute(message, args);
+    }
+    else if (command === 'play') {
+        client.commands.get('play').execute(message, args);
+    }
+    else if (command === 'leave') {
+        client.commands.get('leave').execute(message, args);
     }
     
     
