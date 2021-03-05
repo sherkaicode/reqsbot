@@ -14,18 +14,20 @@ module.exports = {
         let embed = new Discord.MessageEmbed()
             .setColor('#e42643')
             .setTitle('Choose a Role you want')
-            .setDescription(`<@${message.user.id}> Choosing a role will let you acess the channel\n\n`
+            .setDescription(`Choosing a role will let you access the channel\n\n`
                 + `${j} for Japanese\n`
                 + `${p} for Pokemon\n`
                 + `${s} for Soul Knight`);
 
-        let messageEmbed = await message.guild.channels.cache.get('814420531599638529').send(embed)
+        //let messageEmbed = await message.guild.channels.cache.get('814420531599638529').send(embed)
+        
+        let messageEmbed = await message.channel.send(embed);
         messageEmbed.react(j);
         messageEmbed.react(p);
         messageEmbed.react(s);
 
         client.on('messageReactionAdd', async (reaction, user) => {
-           
+
             if (reaction.message.partial) await reaction.fetch();
             if (reaction.partial) await reaction.fetch();
             if (user.bot) return;
@@ -47,7 +49,7 @@ module.exports = {
         })
 
         client.on('messageReactionRemove', async (reaction, user) => {
-        
+
             if (reaction.message.partial) await reaction.fetch();
             if (reaction.partial) await reaction.fetch();
             if (user.bot) return;

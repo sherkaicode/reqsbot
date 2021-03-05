@@ -5,6 +5,7 @@ const fs = require('fs');
 
 const memberCounter = require('./counters/counterM');
 const serverTime = require('./counters/time');
+const reactRole = require('./counters/react')
 // const sched = require('./counters/sendSched');
 // const Timer = new Map()
 // client.reqs = require("./Database/reqs.json");
@@ -21,6 +22,7 @@ client.once('ready', ()=> {
     console.log("Ready")   
     memberCounter(client);
     serverTime(client);
+    reactRole(client, Discord)
     // sched(client, Discord);
 });
 client.on('guildMemberAdd', member => {
@@ -37,10 +39,10 @@ client.on('guildMemberAdd', member => {
 
 
     member.guild.channels.cache.get('813679705638305813').send(embed)
-    client.commands.get('react').execute(member, Discord, client);
+    //client.commands.get('react').execute(member, Discord, client);
 
     
-})
+});
 
 
 client.on('message', message => {
@@ -74,6 +76,9 @@ client.on('message', message => {
     else if (command === 'leave') {
         client.commands.get('leave').execute(message, args);
     }
+    // else if (command === 'react') {
+    //     client.commands.get('react').execute(message, Discord, client);
+    // }
     
     
 
