@@ -8,7 +8,7 @@ module.exports = {
         const sk = message.guild.roles.cache.find(role => role.name === 'Soul Knight')
 
         const j = '🍥'
-        const p = '🔥'
+        const p = '🎮'
         const s = '🗡️'
 
         let embed = new Discord.MessageEmbed()
