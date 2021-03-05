@@ -9,7 +9,7 @@ module.exports = {
 
         const j = '🍥'
         const p = '🎮'
-        const s = '🗡️'
+        const s = '🐑'
 
         let embed = new Discord.MessageEmbed()
             .setColor('#e42643')
