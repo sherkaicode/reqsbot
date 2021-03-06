@@ -1,7 +1,8 @@
+const fs = require('fs')
 module.exports = {
     name: 'line',
     description: "this is a ping command!",
-    execute(message, args, client, fs, Discord) {
+    execute(client, message, args, Discord) {
 
         var sub = args[0]
 

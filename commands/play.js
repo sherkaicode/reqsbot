@@ -5,7 +5,7 @@ const { query } = require('express');
 module.exports = {
     name: 'play',
     description: 'Joins and plays vid',
-    async execute(message, args) {
+    async execute(client, message, args, Discord) {
         const voiceChannel = message.member.voice.channel;
 
         if (!voiceChannel) return message.channel.send('You must be in a voice channel to command');

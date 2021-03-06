@@ -1,7 +1,8 @@
+const fs = require('fs')
 module.exports = {
     name: 'remove',
     description: "this is a ping command!",
-    execute(message, args, client, fs) {
+    execute(client, message, args, Discord) {
 
         var removeUser = args[0];
         var data = fs.readFileSync('./Database/reqs.json');

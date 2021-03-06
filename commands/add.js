@@ -1,7 +1,8 @@
+const fs = require('fs')
 module.exports = {
     name: 'add',
     description: "this is a ping command!",
-    execute(message, args, client, fs) {
+    execute(client, message, args, Discord) {
 
         message.reply('Input Description').then(() => {
             message.channel.awaitMessages(m => m.author.id == message.author.id,

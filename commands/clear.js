@@ -1,7 +1,7 @@
 module.exports = {
     name: 'clear',
     description: "this is a ping command!",
-    async execute(message, args){
+    async execute(client, message, args, Discord){
         if(!args[0]) return message.reply("Input num");
         if(isNaN(args[0])) return message.reply("Iput numer");
 

@@ -1,7 +1,7 @@
 module.exports = {
     name: 'react',
     description: 'Kick a member',
-    async execute(message, Discord, client) {
+    async execute(client, message, args, Discord) {
         const channel = '814420531599638529';
         const pok = message.guild.roles.cache.find(role => role.name === 'Pokemon')
         const jap = message.guild.roles.cache.find(role => role.name === 'Japanese')
