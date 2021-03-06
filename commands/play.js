@@ -5,6 +5,7 @@ const { query } = require('express');
 module.exports = {
     name: 'play',
     description: 'Joins and plays vid',
+    aliases: ['p', 'pl'], 
     async execute(client, message, args, Discord) {
         const voiceChannel = message.member.voice.channel;
 
