@@ -1,0 +1,23 @@
+var Scraper = require('images-scraper');
+
+const google = new Scraper({
+    puppeteer: {
+        headless: true,
+    },
+});
+module.exports = {
+    name: 'image',
+    aliases: ['im'], 
+    description: "This send an image",
+    async execute(client, message, args) {
+        const image_query = args.join(' ');
+        if (!image_query) return message.channel.send("Please set an image name")
+
+        // (async () => {
+        message.channel.send("Please wait for a little while")
+        const image_results = await google.scrape(image_query, 1);
+        message.channel.send(image_results[0].url)
+        //     console.log('results', results);
+        // })();
+    }
+}
