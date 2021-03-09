@@ -9,5 +9,6 @@ module.exports = (Discord, client) => {
     //serverTime(client);
     reactRole(client, Discord)
     //count(client)
+    client.user.setActivity("Type ,cmd for command list"); 
 
 }
