@@ -1,6 +1,6 @@
 module.exports = {
     name: 'kick', 
-    description: 'Kicks a member[Admins Only]',
+    description: 'Kicks a member[Admins Only] ex: ,kick [@User]',
     execute(client, message, args, Discord){
         const member = message.mentions.users.first()
         if (member){

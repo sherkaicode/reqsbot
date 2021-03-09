@@ -1,6 +1,6 @@
 module.exports = {
     name: 'clear',
-    description: "Clears messeges",
+    description: "Clears messeges ex: ,clear [number]",
     async execute(client, message, args, Discord){
         if(!args[0]) return message.reply("Input num");
         if(isNaN(args[0])) return message.reply("Input number");

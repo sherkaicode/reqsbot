@@ -1,7 +1,7 @@
 const ms = require('ms')
 module.exports = {
     name: 'mute',
-    description: 'Mutes a member[Admins Only]',
+    description: 'Mutes a member[Admins Only] ex: ,mute [@User]',
     execute(client, message, args, Discord) {
         const target = message.mentions.users.first();
         if (target) {

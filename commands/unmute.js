@@ -1,6 +1,6 @@
 module.exports = {
     name: 'unmute', 
-    description: 'Unmutes a member',
+    description: 'Unmutes a member ex: ,unmute [@User]',
     execute(client, message, args, Discord){
         const target = message.mentions.users.first();
         if (target){

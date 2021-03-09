@@ -4,7 +4,7 @@ const { query } = require('express');
 
 module.exports = {
     name: 'play',
-    description: 'Joins and plays audio',
+    description: 'Joins and plays audio ex: ,play [query]',
     aliases: ['p', 'pl'], 
     async execute(client, message, args, Discord) {
         const voiceChannel = message.member.voice.channel;
