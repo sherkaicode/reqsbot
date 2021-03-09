@@ -1,7 +1,7 @@
 const fs = require('fs')
 module.exports = {
     name: 'remove',
-    description: "this is a ping command!",
+    description: "DO NOT USE ATM[Crash Bot]",
     execute(client, message, args, Discord) {
 
         var removeUser = args[0];

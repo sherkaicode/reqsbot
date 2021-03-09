@@ -1,6 +1,6 @@
 module.exports = {
     name: 'leave',
-    description: 'Joins and plays vid',
+    description: 'Bot leaves the voice channel',
     async execute(client, message, args, Discord) {
         const voiceChannel = message.member.voice.channel;
 

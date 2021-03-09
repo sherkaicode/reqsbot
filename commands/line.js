@@ -1,7 +1,7 @@
 const fs = require('fs')
 module.exports = {
     name: 'line',
-    description: "this is a ping command!",
+    description: "DO NOT USE ATM[Crash the Bot]",
     execute(client, message, args, Discord) {
 
         var sub = args[0]

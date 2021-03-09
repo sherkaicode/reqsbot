@@ -5,22 +5,19 @@ module.exports = {
     description: "send cmd",
     execute(client, message, args, Discord){
         const commandFiles = fs.readdirSync('./commands/')
-        var asd = new Array()
-        c = 0
+
+        m = '';
         for (const file of commandFiles) {
             const command = require(`../commands/${file}`);
+            
+            m = m + '__**Command Affix**__' + `${'```'}${command.name}${'```'}`+ '\n' + '> **Description:** ' + ` *${command.description}*`  + '\n\n' ;  
             //client.commands.set(command.name, command);
         
-            asd[c] = command.name;
-            c = c+1;       
+            //console.log(command.aliases)
+            //console.log(v)
         }
-        coun = 0
-        var m = '';
-        while (coun < asd.length){
-            m = m + asd[coun] + '\n'
-            coun = coun + 1;
-            
-        }
-        message.channel.send('```'+m+'```')
+       
+        message.channel.send(m)
+        message.channel.send('**Example** =>' + '\n' + '``` ,Command Affix ```')
     }
 }

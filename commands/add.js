@@ -1,7 +1,7 @@
 const fs = require('fs')
 module.exports = {
     name: 'add',
-    description: "this is a ping command!",
+    description: "DO NOT USE THIS ATM[Crash the Bot]",
     execute(client, message, args, Discord) {
 
         message.reply('Input Description').then(() => {

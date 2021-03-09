@@ -2,7 +2,7 @@ const Canvas = require('canvas')
 
 module.exports = {
     name: 'canvas',
-    description: "this is a ping command!",
+    description: "This turns text to Images",
     async execute(client, message, args, Discord) {
         const canvas = Canvas.createCanvas(700, 150);
         const ctx = canvas.getContext('2d');
