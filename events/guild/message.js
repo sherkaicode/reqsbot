@@ -4,10 +4,13 @@ const count = require('C:/Users/fljum/OneDrive/Desktop/Aegis/JSscript/Reqbot/cou
 module.exports = (Discord, client, message) => {
     
     
-    const prefix =  process.env.PREFIX+" ";
+    const prefix =  process.env.PREFIX;
     if (message) {
         if (message.channel == '817272342307930142'&& !message.author.bot) {
             count(client);
+        }
+        if (message.content.toLocaleLowerCase() == 'thanks hori') {
+            message.channel.send("Sure, No worries")
         }
     }
     if (!message.content.startsWith(prefix) || message.author.bot) return;
