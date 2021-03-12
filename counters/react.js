@@ -13,7 +13,7 @@ module.exports = async (client, Discord) => {
 
 
     let embed = new Discord.MessageEmbed()
-        .setColor('#e42643')
+        .setColor('#000000')
         .setTitle('Choose a Role you want')
         .setDescription(`Choosing a role will let you access the channel\n\n`
             + `${j} for Japanese\n`
