@@ -16,23 +16,10 @@ module.exports = {
             lineheight = ctx.measureText('M').width + font/2
             return lineheight+5;
         }
-        const getPosX = (canvas, text) => {
-            const ctx = canvas.getContext('2d');
-            return (canvas.width/2 - ctx.measureText(text).width)/2
-        }
-        const getPosY = (canvas, text, font) => {
-            const ctx = canvas.getContext('2d');
-            return ((canvas.width/2 - ctx.measureText('M').width)+ font/2)/2
-        }
         font  = 100;
         str = args.slice(0, args.length).join(' ')
-        console.log(str)
-        console.log(font)
 
         const canvas1 = Canvas.createCanvas(100, 100)
-        console.log(getcanvasX(canvas1, str, font))
-        console.log(getcanvasY(canvas1, str, font))
-
         const canvas = Canvas.createCanvas(getcanvasX(canvas1, str, font),getcanvasY(canvas1, str, font))
         const ctx = canvas.getContext('2d');
         const background = await Canvas.loadImage('C:/Users/fljum/OneDrive/Desktop/Aegis/JSscript/Reqbot/Database/BG.JPG');

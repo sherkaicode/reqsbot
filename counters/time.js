@@ -2,7 +2,6 @@ module.exports = async (client) => {
     const guild = client.guilds.cache.get('790447283921616916');
     const channelTime = guild.channels.cache.get('818402997297348668');
     const channelDate = guild.channels.cache.get('818402690936602635');
-    const channelName = guild.channels.cache.get('818403206752370729');
     setInterval(() => {
         var date = new Date();
         var hours = parseInt(date.getHours());
@@ -117,30 +116,6 @@ module.exports = async (client) => {
                 channelTime.setName(`🕛│${nhours}:00 ${suffix}`)
             }
         }
-
-        switch (weekN) {
-            case 1:
-                name = '月│Monday'
-                break;
-            case 2:
-                name = '火│Tuesday'
-                break;
-            case 3:
-                name = '水│Wednesday'
-                break;
-            case 4:
-                name = '木│Thursday'
-                break;
-            case 5:
-                name = '金│Friday'
-                break;
-            case 6:
-                name = '土│Saturday'
-                break;
-            case 7:
-                name = '日│Sunday'
-                break;
-        }
         var C = '';
         var A = '';
         if (day < 10) {
@@ -149,9 +124,30 @@ module.exports = async (client) => {
         if (month < 10) {
             A = '0'
         }
-        channelDate.setName(`🗓│${A}${month + 1}/${C}${day}/${year}`)
-        channelName.setName(`${name}`)
-        // console.log(hours)
-        // console.log(minutes)
+
+        switch (weekN) {
+            case 1:
+                name = `🗓│${year}/${A}${month + 1}/${C}${day} (月)`
+                break;
+            case 2:
+                name = `🗓│${year}/${A}${month + 1}/${C}${day} (火)`
+                break;
+            case 3:
+                name = `🗓│${year}/${A}${month + 1}/${C}${day} (水)`
+                break;
+            case 4:
+                name = `🗓│${year}/${A}${month + 1}/${C}${day} (木)`
+                break;
+            case 5:
+                name = `🗓│${year}/${A}${month + 1}/${C}${day} (金)`
+                break;
+            case 6:
+                name = `🗓│${year}/${A}${month + 1}/${C}${day} (土)`
+                break;
+            case 7:
+                name = `🗓│${year}/${A}${month + 1}/${C}${day} (日)`
+                break;
+        }
+        channelDate.setName(`${name}`)
     }, 5000);
 }
