@@ -9,7 +9,7 @@ module.exports = (Discord, client) => {
     memberCounter(client);
     reactRole(client, Discord)
     time(client)
-    //client.user.setActivity("Mention me for help 😉"); 
-    client.user.setActivity("Under Maintenance"); 
+    client.user.setActivity("Mention me for help 😉"); 
+    // client.user.setActivity("Under Maintenance"); 
 
 }
