@@ -1,6 +1,6 @@
 const Canvas = require('canvas')
 module.exports = async (Discord, client, member) => {
-	console.log(member)
+	//console.log(member)
 	const applyText = (canvas, text) => {
 		const ctx = canvas.getContext('2d');
 
