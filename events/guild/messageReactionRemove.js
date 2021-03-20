@@ -22,7 +22,7 @@ module.exports = async (Discord, client, reaction, user) => {
         if (reaction.emoji.name === s) {
             await reaction.message.guild.members.cache.get(user.id).roles.remove(sch)
         }
-        if (reaction.emoji.name === s) {
+        if (reaction.emoji.name === a) {
             await reaction.message.guild.members.cache.get(user.id).roles.remove(ani)
         }
         else {
