@@ -21,7 +21,6 @@ module.exports = async (Discord, client, member) => {
 	
 	let wcRole = member.guild.roles.cache.find(role => role.name === 'Member');
 	member.roles.add(wcRole);
-	console.log(member.role)
 	Canvas.registerFont('C:/Users/fljum/OneDrive/Desktop/Aegis/JSscript/Reqbot/Database/BN.ttf', { family: 'Bebas Neue' })
 	const canvas = Canvas.createCanvas(700, 250);
 	const ctx = canvas.getContext('2d');
@@ -49,5 +48,5 @@ module.exports = async (Discord, client, member) => {
 
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
 
-	member.guild.channels.cache.get('813679705638305813').send(`Welcome to the server, ${member}!`, attachment)
+	member.guild.channels.cache.get('813679705638305813').send(`Welcome to the server, ${member}!\n Please visit ${member.guild.channels.cache.get('814420531599638529').toString()}`, attachment)
 }
