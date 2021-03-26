@@ -29,41 +29,12 @@ module.exports = async (Discord, client, member) => {
 	let wcRole = member.guild.roles.cache.find(role => role.name === 'Member');
 	member.roles.add(wcRole);
 	Canvas.registerFont('C:/Users/fljum/OneDrive/Desktop/Aegis/JSscript/Reqbot/Database/BN.ttf', { family: 'Compose Black' })
-	Canvas.registerFont('C:/Users/fljum/OneDrive/Desktop/Aegis/JSscript/Reqbot/Database/JP.ttf', { family: 'JP' })
 	const canvas = Canvas.createCanvas(1024, 500);
 	const ctx = canvas.getContext('2d');
-
-	const background = await Canvas.loadImage('C:/Users/fljum/OneDrive/Desktop/Aegis/JSscript/Reqbot/Database/Wall.jpg');
+	const background = await Canvas.loadImage('C:/Users/fljum/OneDrive/Desktop/Aegis/JSscript/Reqbot/Database/Wall2.png');
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-
 	ctx.strokeStyle = '#ff6961';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
-
-	ctx.font = `85px JP`;  
-	ctx.fillStyle = '#ffffff';
-	ctx.fillText(`花`,canvas.width/4 - getwidth(canvas,'花') -50, 90);
-	ctx.fillText(`丸`,canvas.width/4 - getwidth(canvas,'丸') -50, 180);
-	ctx.fillText(`へ`,canvas.width/4 - getwidth(canvas,'へ') -50, 270);
-	ctx.fillText(`！`,canvas.width/4 - getwidth(canvas,'！') -50, 360);
-	ctx.fillText(`よ`,canvas.width*3/4 - getwidth(canvas,'よ') +50 , 90);
-	ctx.fillText(`う`,canvas.width*3/4 - getwidth(canvas,'う') +50 , 180);
-	ctx.fillText(`こ`,canvas.width*3/4 - getwidth(canvas,'こ') +50, 270);
-	ctx.fillText(`そ`,canvas.width*3/4 - getwidth(canvas,'そ') +50 , 360);
-	ctx.strokeStyle = '#000000';
-	ctx.lineWidth = 5;
-	ctx.strokeText(`花`,canvas.width/4 - getwidth(canvas,'花') -50, 90);
-	ctx.strokeText(`丸`,canvas.width/4 - getwidth(canvas,'丸') -50, 180);
-	ctx.strokeText(`へ`,canvas.width/4 - getwidth(canvas,'へ') -50, 270);
-	ctx.strokeText(`！`,canvas.width/4 - getwidth(canvas,'！') -50, 360);
-	ctx.strokeText(`よ`,canvas.width*3/4 - getwidth(canvas,'よ') +50 , 90);
-	ctx.strokeText(`う`,canvas.width*3/4 - getwidth(canvas,'う') +50 , 180);
-	ctx.strokeText(`こ`,canvas.width*3/4 - getwidth(canvas,'こ') +50, 270);
-	ctx.strokeText(`そ`,canvas.width*3/4 - getwidth(canvas,'そ') +50 , 360);
-
-
-
-
-
 
 	ctx.font = applyText(canvas, `${member.displayName}!`);
 	ctx.fillStyle = '#ffffff';
@@ -71,7 +42,6 @@ module.exports = async (Discord, client, member) => {
 	ctx.strokeStyle = '#000000';
 	ctx.lineWidth = 5;
 	ctx.strokeText(`${member.displayName}`, getPos(canvas, `${member.displayName}`), canvas.height - 40);
-
 
 	ctx.beginPath();
 	ctx.arc(513, 175, 122, 0, Math.PI * 2, true);

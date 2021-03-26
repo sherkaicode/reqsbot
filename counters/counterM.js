@@ -4,7 +4,7 @@ module.exports = async (client) => {
         const memberCount = guild.memberCount;
         const channel = guild.channels.cache.get('818403289091670027')
 
-        channel.setName(`👥│ ${memberCount.toLocaleString()} Members`)
+        channel.setName(`👥│${memberCount.toLocaleString()} Members`)
         //console.log(memberCount);
     }, 5000);
 }
