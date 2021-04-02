@@ -8,7 +8,7 @@ module.exports = async (Discord, client, reaction, user) => {
         const sch = guild.roles.cache.find(role => role.name === 'Student')
         const ani = guild.roles.cache.find(role => role.name === 'Weeb')
 
-        const j = '🗾'
+        const j = '💮'
         const g = '🎮'
         const s = '📝'
         const a = '🍥'

@@ -7,11 +7,13 @@ module.exports = async (Discord, client, reaction, user) => {
         const jap = guild.roles.cache.find(role => role.name === 'Japanese')
         const sch = guild.roles.cache.find(role => role.name === 'Student')
         const ani = guild.roles.cache.find(role => role.name === 'Weeb')
+     
 
-        const j = '🗾'
+        const j = '💮'
         const g = '🎮'
         const s = '📝'
         const a = '🍥'
+    
 
         if (reaction.emoji.name === j) {
             await reaction.message.guild.members.cache.get(user.id).roles.remove(jap)
@@ -25,6 +27,7 @@ module.exports = async (Discord, client, reaction, user) => {
         if (reaction.emoji.name === a) {
             await reaction.message.guild.members.cache.get(user.id).roles.remove(ani)
         }
+       
         else {
             return;
         }
