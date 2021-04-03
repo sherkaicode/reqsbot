@@ -1,6 +1,6 @@
-const memberCounter = require('C:/Users/fljum/OneDrive/Desktop/Aegis/JSscript/Reqbot/counters/counterM.js')
-const time = require('C:/Users/fljum/OneDrive/Desktop/Aegis/JSscript/Reqbot/counters/time.js')
-const Etime = require('C:/Users/fljum/OneDrive/Desktop/Aegis/JSscript/Reqbot/counters/Etime.js')
+const memberCounter = require('../../counters/counterM')
+const time = require('../../counters/time')
+const Etime = require('../../counters/Etime')
 
 
 module.exports = (Discord, client) => {

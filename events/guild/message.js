@@ -1,5 +1,5 @@
 const { includes } = require("ffmpeg-static");
-const countv = require('C:/Users/fljum/OneDrive/Desktop/Aegis/JSscript/Reqbot/counters/counts.js')
+const countv = require('../../counters/counts')
 
 module.exports = (Discord, client, message) => {
 
