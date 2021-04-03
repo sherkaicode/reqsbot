@@ -3,7 +3,7 @@ module.exports = async (client) => {
     const channelTime = guild.channels.cache.get('821781980173172736');
     const channelDate = guild.channels.cache.get('818402690936602635');
     setInterval(() => {
-        var date = new Date().toLocaleString('en-US',{ timeZone: 'Asia/Hong_Kong' , hour12:false }); 
+        var date = new Date()
         
 
         
