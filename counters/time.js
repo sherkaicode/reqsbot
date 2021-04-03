@@ -7,10 +7,10 @@ module.exports = async (client) => {
         
 
         
-        var day = date.getUTCDate();
-        var month = date.getUTCMonth();
+        var day = date.getDate();
+        var month = date.getMonth();
         var year = date.getFullYear();
-        var weekN = parseInt(date.getUTCDay());
+        var weekN = parseInt(date.getDay());
         console.log(day)
         console.log(month)
         console.log(year)
