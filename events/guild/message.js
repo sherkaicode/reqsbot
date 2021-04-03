@@ -4,7 +4,7 @@ const countv = require('../../counters/counts')
 module.exports = (Discord, client, message) => {
 
 
-    const prefix = process.env.PREFIX;
+    const prefix = ',';
     if (message) {
 
         
