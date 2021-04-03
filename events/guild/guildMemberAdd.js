@@ -28,10 +28,10 @@ module.exports = async (Discord, client, member) => {
 
 	let wcRole = member.guild.roles.cache.find(role => role.name === 'Member');
 	member.roles.add(wcRole);
-	Canvas.registerFont('C:/Users/fljum/OneDrive/Desktop/Aegis/JSscript/Reqbot/Database/BN.ttf', { family: 'Compose Black' })
+	Canvas.registerFont('Database/BN.ttf', { family: 'Compose Black' })
 	const canvas = Canvas.createCanvas(1024, 500);
 	const ctx = canvas.getContext('2d');
-	const background = await Canvas.loadImage('C:/Users/fljum/OneDrive/Desktop/Aegis/JSscript/Reqbot/Database/Wall2.png');
+	const background = await Canvas.loadImage('Database/Wall2.png');
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 	ctx.strokeStyle = '#ff6961';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);

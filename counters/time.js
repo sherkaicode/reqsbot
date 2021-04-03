@@ -3,14 +3,23 @@ module.exports = async (client) => {
     const channelTime = guild.channels.cache.get('821781980173172736');
     const channelDate = guild.channels.cache.get('818402690936602635');
     setInterval(() => {
-        var date = new Date();
-        var day = date.getDate();
+        var date = new Date().toLocaleString('en-US',{ timeZone: 'Asia/Hong_Kong' , hour12:false }); 
+        
+
+        
+        var day = date.getUTCDate();
         var month = date.getUTCMonth();
         var year = date.getFullYear();
-        var weekN = parseInt(date.getDay());
+        var weekN = parseInt(date.getUTCDay());
+        console.log(day)
+        console.log(month)
+        console.log(year)
+        console.log(weekN)
+        
         var name = ''
         var C = '';
         var A = '';
+        
         if (day < 10) {
             C = '0'
         }
@@ -37,10 +46,11 @@ module.exports = async (client) => {
             case 6:
                 name = `📅│${year}/${A}${month + 1}/${C}${day} (土)`
                 break;
-            case 7:
+            case 0:
                 name = `📅│${year}/${A}${month + 1}/${C}${day} (日)`
                 break;
         }
         channelDate.setName(`${name}`)
+        
     }, 5000);
 }
