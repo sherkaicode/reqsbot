@@ -4,17 +4,10 @@ module.exports = async (client) => {
     const channelDate = guild.channels.cache.get('818402690936602635');
     setInterval(() => {
         var date = new Date()
-        
-
-        
         var day = date.getDate();
         var month = date.getMonth();
         var year = date.getFullYear();
         var weekN = parseInt(date.getDay());
-        console.log(day)
-        console.log(month)
-        console.log(year)
-        console.log(weekN)
         
         var name = ''
         var C = '';

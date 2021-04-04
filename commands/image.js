@@ -1,15 +1,16 @@
 var Scraper = require('images-scraper');
 
-const google = new Scraper({
-    puppeteer: {
-        headless: true,
-    },
-});
+
 module.exports = {
     name: 'image',
     aliases: ['im'], 
     description: "This send an image from google ex: ,image [query] | ,im [query]",
     async execute(client, message, args) {
+        const google = new Scraper({
+            puppeteer: {
+                headless: true,
+            },
+        });
         const image_query = args.join(' ');
         if (!image_query) return message.channel.send("Please set an image name")
 

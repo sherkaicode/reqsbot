@@ -22,7 +22,7 @@ module.exports = {
         const canvas1 = Canvas.createCanvas(100, 100)
         const canvas = Canvas.createCanvas(getcanvasX(canvas1, str, font),getcanvasY(canvas1, str, font))
         const ctx = canvas.getContext('2d');
-        const background = await Canvas.loadImage('C:/Users/fljum/OneDrive/Desktop/Aegis/JSscript/Reqbot/Database/BG.JPG');
+        const background = await Canvas.loadImage('Database/BG.JPG');
         ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
         ctx.strokeStyle = '#2c2f33';
