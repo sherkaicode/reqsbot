@@ -9,7 +9,7 @@ module.exports = {
         const google = new Scraper({
             puppeteer: {
                 headless: true,
-                { args: ['--no-sandbox'] }
+                args: ['--no-sandbox'] 
             },
         });
         const image_query = args.join(' ');
