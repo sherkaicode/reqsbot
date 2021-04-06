@@ -15,11 +15,11 @@ module.exports = {
         const image_query = args.join(' ');
         if (!image_query) return message.channel.send("Please set an image name")
         message.channel.send("Please wait for a little while")
-            (async () => {
-                
-                const image_results = await google.scrape(image_query, 1);
-                message.channel.send(image_results[0].url)
-                //     console.log('results', results);
-            })();
+
+
+        const image_results = await google.scrape(image_query, 1);
+        message.channel.send(image_results[0].url)
+        //     console.log('results', results);
+
     }
 }
