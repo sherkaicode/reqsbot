@@ -3,6 +3,7 @@ const Canvas = require('canvas')
 module.exports = {
     name: 'canvas',
     description: "This turns text to Images ex: ,canvas [words]",
+    cooldown: 5,
     async execute(client, message, args, Discord) {
         const getcanvasX = (canvas, txt, font) => {
             const ctx = canvas.getContext('2d');

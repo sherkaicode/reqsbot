@@ -5,6 +5,7 @@ module.exports = {
     name: 'image',
     aliases: ['im'],
     description: "This send an image from google ex: ,image [query] | ,im [query]",
+    cooldown: 15,
     async execute(client, message, args) {
         const google = new Scraper({
             puppeteer: {
