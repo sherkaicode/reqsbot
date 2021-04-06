@@ -7,7 +7,7 @@ module.exports = (Discord, client, message) => {
     const prefix = ',';
     if (message) {
 
-        
+
         if (message.channel == '817272342307930142' && !message.author.bot) {
             countv(client);
         }
@@ -19,8 +19,8 @@ module.exports = (Discord, client, message) => {
         if (message.mentions.has(client.user.id)) {
 
             message.channel.send("Hello there!");
-            m = `The Prefix of this Bot is [**${prefix}**]` + '\n' 
-            + 'Type **,cmd** for the list of the commands and brief description'
+            m = `The Prefix of this Bot is [**${prefix}**]` + '\n'
+                + 'Type **,cmd** for the list of the commands and brief description'
             message.channel.send(m)
         };
     }
@@ -31,6 +31,11 @@ module.exports = (Discord, client, message) => {
 
     const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
-    if (command) command.execute(client, message, args, Discord);
+    try {
+        command.execute(client, message, args, Discord);
+    } catch (err) {
+        message.reply("Error doing the command");
+        console.log(err);
+    }
 
 }
