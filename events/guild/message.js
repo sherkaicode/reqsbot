@@ -49,7 +49,7 @@ module.exports = (Discord, client, message) => {
     setTimeout(()=> time_stamps.delete(message.author.id), cooldown_amount);
 
     try {
-        command.execute(client, message, args, Discord);
+        command.execute(client, message, args, Discord, cmd);
     } catch (err) {
         message.reply("Error doing the command");
         console.log(err);
