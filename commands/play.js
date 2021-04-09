@@ -23,7 +23,7 @@ module.exports = {
         const server_queue = queue.get(message.guild.id);
 
         if (cmd == 'q') {
-            console.log(queue)
+            console.log(server_queue)
         }
         if (cmd === 'play') {
             if (!args.length) return message.channel.send('You need to send the second argument!');
