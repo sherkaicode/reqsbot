@@ -24,10 +24,10 @@ module.exports = {
 
         if (cmd == 'q') {
             console.log(server_queue)
-            console.log(server_queue.song[0].title)
+            console.log(server_queue.songs[0].title)
             var m = ''
-            for (var c = 0; c < server_queue.song.length; c = c+1) {
-                m = `${server_queue.song[c]}` + '\n' + m;
+            for (var c = 0; c < server_queue.songs.length; c = c+1) {
+                m = `${server_queue.songs[c]}` + '\n' + m;
             }
             message.channel.send('```'+ m + '````');
         }
