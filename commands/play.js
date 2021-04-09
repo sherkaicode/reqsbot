@@ -24,12 +24,16 @@ module.exports = {
 
         if (cmd == 'q') {
             console.log(server_queue)
+            console.log(server_queue.song[0].title)
+            var m = ''
+            for (var c = 0; c < server_queue.song.length; c = c+1) {
+                m = `${server_queue.song[c]}` + '\n' + m;
+            }
+            message.channel.send('```'+ m + '````');
         }
         if (cmd === 'play') {
             if (!args.length) return message.channel.send('You need to send the second argument!');
             let song = {};
-            console.log(song)
-
             
             if (ytdl.validateURL(args[0])) {
                 const song_info = await ytdl.getInfo(args[0]);
