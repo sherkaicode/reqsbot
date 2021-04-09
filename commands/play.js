@@ -27,9 +27,9 @@ module.exports = {
             console.log(server_queue.songs[0].title)
             var m = ''
             for (var c = 0; c < server_queue.songs.length; c = c+1) {
-                m = `${server_queue.songs[c]}` + '\n' + m;
+                m = `[${c+1}] ${server_queue.songs[c].title}` + '\n' + m;
             }
-            message.channel.send('```'+ m + '````');
+            message.channel.send('```'+ m + '```');
         }
         if (cmd === 'play') {
             if (!args.length) return message.channel.send('You need to send the second argument!');
