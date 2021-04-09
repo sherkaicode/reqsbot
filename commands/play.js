@@ -6,7 +6,7 @@ const queue = new Map();
 
 module.exports = {
     name: 'play',
-    aliases: ['skip', 'stop'], 
+    aliases: ['skip', 'stop', 'q'], 
     cooldown: 0,
     description: 'Advanced music bot',
     async execute(client, message, args, Discord, cmd) {
@@ -22,7 +22,9 @@ module.exports = {
         
         const server_queue = queue.get(message.guild.id);
 
-        
+        if (cmd == 'q') {
+            console.log(queue)
+        }
         if (cmd === 'play') {
             if (!args.length) return message.channel.send('You need to send the second argument!');
             let song = {};
