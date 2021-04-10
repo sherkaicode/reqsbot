@@ -23,7 +23,7 @@ module.exports = async (Discord, client, member) => {
 
 		return ctx.measureText(text).width/2
 	}
-	const emoji = client.emojis.cache.get("817355708374056980")
+	const emoji = client.emojis.cache.get("829305452603899904")
 
 
 	let wcRole = member.guild.roles.cache.find(role => role.name === 'Member');
