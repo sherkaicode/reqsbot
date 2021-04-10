@@ -81,7 +81,7 @@ module.exports = {
             }
         }
 
-        else if (cmd === 'skip') skip_song(message, server_queue);
+        else if (cmd === 'skip') skip_song(message, server_queue, client);
         else if (cmd === 'stop') stop_song(message, server_queue);
     }
 
@@ -106,7 +106,7 @@ const video_player = async (guild, song, client) => {
     await song_queue.text_channel.send(`${chopper} Now playing **${song.title}**`)
 }
 
-const skip_song = (message, server_queue) => {
+const skip_song = (message, server_queue, client) => {
     const brook = client.emojis.cache.get('829310277194743829')
     if (!message.member.voice.channel) return message.channel.send('You need to be in a channel to execute this command!');
     if (!server_queue) {
