@@ -69,7 +69,7 @@ module.exports = {
                 try {
                     const connection = await voice_channel.join();
                     queue_constructor.connection = connection;
-                    video_player(message.guild, queue_constructor.songs[0]);
+                    video_player(message.guild, queue_constructor.songs[0],client);
                 } catch (err) {
                     queue.delete(message.guild.id);
                     message.channel.send('There was an error connecting!');
@@ -87,7 +87,7 @@ module.exports = {
 
 }
 
-const video_player = async (guild, song) => {
+const video_player = async (guild, song, client) => {
     const chopper = client.emojis.cache.get('830253377740734464')
     const song_queue = queue.get(guild.id);
 
@@ -101,7 +101,7 @@ const video_player = async (guild, song) => {
     song_queue.connection.play(stream, { seek: 0, volume: 0.5 })
         .on('finish', () => {
             song_queue.songs.shift();
-            video_player(guild, song_queue.songs[0]);
+            video_player(guild, song_queue.songs[0], client);
         });
     await song_queue.text_channel.send(`${chopper} Now playing **${song.title}**`)
 }
@@ -117,7 +117,8 @@ const skip_song = (message, server_queue) => {
 
 const stop_song = (message, server_queue) => {
     if (!message.member.voice.channel) return message.channel.send('You need to be in a channel to execute this command!');
+    message.react('829307972832329749');
     server_queue.songs = [];
     server_queue.connection.dispatcher.end();
-    message.react('829307972832329749')
+    
 }
