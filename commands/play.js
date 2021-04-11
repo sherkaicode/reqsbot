@@ -21,13 +21,18 @@ module.exports = {
         const server_queue = queue.get(message.guild.id);
 
         if (cmd == 'q') {
-            console.log(server_queue)
-            console.log(server_queue.songs[0].title)
+            const embed = new Discord.MessageEmbed()
+                .setTitle("Queued Songs")
             var m = ''
+            // for (var c = 0; c < server_queue.songs.length; c = c + 1) {
+            //     m = m + `[${c + 1}] ${server_queue.songs[c].title}` + '\n';
+            //     embed.addField(c, m)
+            // }
             for (var c = 0; c < server_queue.songs.length; c = c + 1) {
-                m = `[${c + 1}] ${server_queue.songs[c].title}` + '\n' + m;
+                m =`${server_queue.songs[c].title}`;
+                embed.addField(c, m)
             }
-            message.channel.send('```' + m + '```');
+            message.channel.send(embed);
         }
         if (cmd === 'play') {
             if (!args.length) return message.channel.send('You need to send the second argument!');
@@ -69,7 +74,7 @@ module.exports = {
                 try {
                     const connection = await voice_channel.join();
                     queue_constructor.connection = connection;
-                    video_player(message.guild, queue_constructor.songs[0],client);
+                    video_player(message.guild, queue_constructor.songs[0], client);
                 } catch (err) {
                     queue.delete(message.guild.id);
                     message.channel.send('There was an error connecting!');
@@ -120,5 +125,5 @@ const stop_song = (message, server_queue) => {
     message.react('829307972832329749');
     server_queue.songs = [];
     server_queue.connection.dispatcher.end();
-    
+
 }
