@@ -30,7 +30,7 @@ module.exports = {
             // }
             for (var c = 0; c < server_queue.songs.length; c = c + 1) {
                 m =`${server_queue.songs[c].title}`;
-                embed.addField(c, m)
+                embed.addField(c+1, m, true)
             }
             message.channel.send(embed);
         }
