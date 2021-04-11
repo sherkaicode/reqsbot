@@ -22,15 +22,14 @@ module.exports = {
 
         if (cmd == 'q') {
             const embed = new Discord.MessageEmbed()
-                .setTitle("Queued Songs")
             var m = ''
             // for (var c = 0; c < server_queue.songs.length; c = c + 1) {
             //     m = m + `[${c + 1}] ${server_queue.songs[c].title}` + '\n';
             //     embed.addField(c, m)
             // }
             for (var c = 0; c < server_queue.songs.length; c = c + 1) {
-                m =`[${c+1}] ${server_queue.songs[c].title}`;
-                embed.addField(' ', m)
+                m = `[${c + 1}] ${server_queue.songs[c].title}`;
+                embed.setTitle(m)
             }
             message.channel.send(embed);
         }
