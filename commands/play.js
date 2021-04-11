@@ -29,8 +29,8 @@ module.exports = {
             //     embed.addField(c, m)
             // }
             for (var c = 0; c < server_queue.songs.length; c = c + 1) {
-                m =`${server_queue.songs[c].title}`;
-                embed.addField(c+1, m, true)
+                m =`[${c+1}] ${server_queue.songs[c].title}`;
+                embed.addField(' ', m)
             }
             message.channel.send(embed);
         }
