@@ -66,6 +66,7 @@ module.exports = async (Discord, client, member) => {
 
 	}
 	else {
-
+		member.guild.channels.cache.get('813679705638305813').send(`Welcome to **Hanamaru** ${member}! ${emoji}` + "\n" +
+			`Do your Job I hired you for`, attachment)
 	}
 }
