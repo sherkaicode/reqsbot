@@ -1,6 +1,7 @@
 const Canvas = require('canvas')
 module.exports = async (Discord, client, member) => {
 	//console.log(member)
+
 	const applyText = (canvas, text) => {
 		const ctx = canvas.getContext('2d');
 
@@ -21,13 +22,19 @@ module.exports = async (Discord, client, member) => {
 	const getwidth = (canvas, text) => {
 		const ctx = canvas.getContext('2d');
 
-		return ctx.measureText(text).width/2
+		return ctx.measureText(text).width / 2
 	}
 	const emoji = client.emojis.cache.get("829305452603899904")
 
 
 	let wcRole = member.guild.roles.cache.find(role => role.name === 'Member');
-	member.roles.add(wcRole);
+	let botRole = member.guild.roles.cache.find(role => role.name === 'Bots')
+	if (!member.user.bot) {
+		member.roles.add(wcRole);
+	}
+	else {
+		member.roles.add(botRole);
+	}
 	Canvas.registerFont('Database/BN.ttf', { family: 'Compose Black' })
 	const canvas = Canvas.createCanvas(1024, 500);
 	const ctx = canvas.getContext('2d');
@@ -53,6 +60,12 @@ module.exports = async (Discord, client, member) => {
 
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
 
-	member.guild.channels.cache.get('813679705638305813').send(`Welcome to **Hanamaru** ${member}! ${emoji}`+"\n"+
-	`Please visit ${member.guild.channels.cache.get('814420531599638529').toString()} to get a role.`, attachment)
+	if (!member.user.bot) {
+		member.guild.channels.cache.get('813679705638305813').send(`Welcome to **Hanamaru** ${member}! ${emoji}` + "\n" +
+			`Please visit ${member.guild.channels.cache.get('814420531599638529').toString()} to get a role.`, attachment)
+
+	}
+	else {
+
+	}
 }

@@ -111,7 +111,7 @@ const video_player = async (guild, song, client) => {
 const skip_song = (message, server_queue, client) => {
     const brook = client.emojis.cache.get('829310277194743829')
     if (!message.member.voice.channel) return message.channel.send('You need to be in a channel to execute this command!');
-    if (server_queue.songs.length < 1) {
+    if (server_queue.songs.length <= 1) {
         return message.channel.send(`There are no songs in queue ${brook}`);
     }
     server_queue.connection.dispatcher.end();
