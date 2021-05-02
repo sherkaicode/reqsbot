@@ -5,7 +5,7 @@ const queue = new Map();
 
 module.exports = {
     name: 'play',
-    aliases: ['skip', 'stop', 'q'],
+    aliases: ['skip', 'stop', 'q','leave'],
     cooldown: 0,
     description: 'Advanced music bot',
     async execute(client, message, args, Discord, cmd) {
@@ -22,10 +22,6 @@ module.exports = {
 
         if (cmd == 'q') {
             var m = ''
-            // for (var c = 0; c < server_queue.songs.length; c = c + 1) {
-            //     m = m + `[${c + 1}] ${server_queue.songs[c].title}` + '\n';
-            //     embed.addField(c, m)
-            // }
             for (var c = 0; c < server_queue.songs.length; c = c + 1) {
                 m = m + `[${c + 1}] ${server_queue.songs[c].title}` + '\n';
             }
@@ -84,7 +80,7 @@ module.exports = {
         }
 
         else if (cmd === 'skip') skip_song(message, server_queue, client);
-        else if (cmd === 'stop') stop_song(message, server_queue);
+        else if (cmd === 'stop' || cmd === 'leave') stop_song(message, server_queue);
     }
 
 }

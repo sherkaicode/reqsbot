@@ -8,9 +8,8 @@ module.exports = (Discord, client) => {
     console.log("Ready")
     memberCounter(client);
     time(client)
-    Etime(client);
-    //client.user.setActivity("Under Maintenance"); 
-
+    Etime(client); 
+    
     client.user.setActivity("🤙me for help 😉", { type: "LISTENING"})
 
 }

@@ -3,7 +3,7 @@ translate.engine = "libre";
 
 module.exports = {
     name: 'trans',
-    description: "Translate Japanese",
+    description: "Translate Japanese EX. [prefix]trans (word)",
     cooldown: 5,
     execute(client, message, args, Discord) {
         const trans = args[0];

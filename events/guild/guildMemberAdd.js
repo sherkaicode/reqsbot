@@ -1,32 +1,21 @@
 const Canvas = require('canvas')
 module.exports = async (Discord, client, member) => {
-	//console.log(member)
 
 	const applyText = (canvas, text) => {
 		const ctx = canvas.getContext('2d');
-
 		let fontSize = 100;
-
 		do {
 			ctx.font = `${fontSize -= 1}px "Compose Black"`;
-
 		} while (ctx.measureText(text).width > canvas.width);
-
 		return ctx.font;
 	};
+
 	const getPos = (canvas, text) => {
 		const ctx = canvas.getContext('2d');
-
 		return (canvas.width - ctx.measureText(text).width) / 2
 	}
-	const getwidth = (canvas, text) => {
-		const ctx = canvas.getContext('2d');
-
-		return ctx.measureText(text).width / 2
-	}
+	
 	const emoji = client.emojis.cache.get("829305452603899904")
-
-
 	let wcRole = member.guild.roles.cache.find(role => role.name === 'Member');
 	let botRole = member.guild.roles.cache.find(role => role.name === 'Bots')
 	if (!member.user.bot) {

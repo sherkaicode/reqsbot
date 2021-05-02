@@ -1,6 +1,6 @@
 module.exports = {
     name: 'unmute',
-    description: 'Unmutes a member ex: ,unmute [@User]',
+    description: 'Unmutes a member [Admins Only]',
     execute(client, message, args, Discord) {
         if (message.member.roles.cache.some(role => role.name === 'Consultant') || message.member.roles.cache.some(role => role.name === 'Creator')) {
             const target = message.mentions.users.first();

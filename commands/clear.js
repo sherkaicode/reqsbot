@@ -1,6 +1,6 @@
 module.exports = {
     name: 'clear',
-    description: "Clears messeges ex: ,clear [number]",
+    description: "Clears messeges EX. [prefix]clear (how many messages to delete)",
     async execute(client, message, args, Discord) {
         if (message.member.roles.cache.some(role => role.name === 'Consultant') || message.member.roles.cache.some(role => role.name === 'Creator')) {
             if (!args[0]) return message.reply("Input num");

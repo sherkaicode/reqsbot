@@ -1,6 +1,6 @@
 module.exports = {
     name: 'ban',
-    description: 'Bans a Member [Admins Only] ex: ,ban [@User]',
+    description: 'Bans a Member [Admins Only]',
     execute(client, message, args, Discord) {
 
         if (message.member.roles.cache.some(role => role.name === 'Consultant') || message.member.roles.cache.some(role => role.name === 'Creator')) {
