@@ -12,4 +12,4 @@ client.events = new Discord.Collection();
 })
 
 
-client.login("Nzk1MTYxNjYwMDUwNTA1ODAw.X_FWAQ.6O-NoGWVNsONa6qzVq_LcyFpDis");
+client.login(process.env.TOKEN);
